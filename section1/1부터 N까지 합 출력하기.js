@@ -12,7 +12,8 @@
 
 import { areNumbersInRange } from '../util/boolean.js';
 
-function solution(...n) {
+export function solution14(...n) {
+  if (n.length === 0) return false;
   const isInRange = areNumbersInRange(n, 1, 20);
   let sum = 0;
 
@@ -22,10 +23,3 @@ function solution(...n) {
 
   return isInRange ? sum : false;
 }
-
-console.log(solution(0)); // false
-console.log(solution(1)); // 1
-console.log(solution(6)); // 21
-console.log(solution(10)); // 55
-console.log(solution(20)); // 210
-console.log(solution(21)); // false
