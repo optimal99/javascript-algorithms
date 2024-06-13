@@ -13,25 +13,24 @@ import { areNumbersInRange } from '../util/boolean.js';
  * 4. 세 수 중 최솟값 구하기
  * */
 
-function solution(a, b, c) {
-  const isInRange = areNumbersInRange([a, b, c], 1, 100);
-  let minNumber;
-  
-  if (isInRange) {
-    if (a < b) {
-      minNumber = a;
-    } else minNumber = b;
-    if (c < minNumber) {
-      minNumber = c;
-    }
-  } else return '100이하의 자연수를 입력해주세요.';
-  
-  return minNumber;
-}
-
-// function solution(...numbers) {
-//   const isInRange = areNumbersInRange(numbers, 1, 100);
-//   return isInRange ? Math.min(...numbers) : '100이하의 자연수를 입력해주세요.';
+// export function solution11(a, b, c) {
+//   const isInRange = areNumbersInRange([a, b, c], 1, 100);
+//   let minNumber;
+//
+//   if (isInRange) {
+//     if (a < b) {
+//       minNumber = a;
+//     } else minNumber = b;
+//     if (c < minNumber) {
+//       minNumber = c;
+//     }
+//   } else return '100이하의 자연수를 입력해주세요.';
+//
+//   return minNumber;
 // }
 
-console.log(solution(6, 5, 11)); // 5
+export function solution11(...numbers) {
+  if (numbers.length === 0) return NaN;
+  const isInRange = areNumbersInRange(numbers, 1, 100);
+  return isInRange ? Math.min(...numbers) : '100이하의 자연수를 입력해주세요.';
+}
