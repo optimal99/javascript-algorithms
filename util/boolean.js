@@ -6,7 +6,11 @@
  * @returns {boolean} 모든 숫자가 범위 내에 속하면 true, 아니면 false를 반환합니다.
  */
 export function areNumbersInRange(numbers, min, max) {
-  return numbers.every(n => {
-    return !(!Number.isInteger(n) || n < min || n > max);
-  });
+  if (Array.isArray(numbers)) {
+    return numbers.every(number => {
+      return !(!Number.isInteger(number) || number < min || number > max);
+    });
+  } else {
+    return !(!Number.isInteger(numbers) || numbers < min || numbers > max);
+  }
 }
