@@ -10,16 +10,28 @@
  * 3. 가장 긴 변을 제외한 나머지 두 변의 길이 합이 가장 긴 변보다 크면 YES, 아니면 NO 출력
  * */
 
-function solution(a, b, c) {
-    let answer = "YES";
-    let max;
-    let sum = a + b + c;
+export function solution12(a, b, c) {
+  const triangleName = triangleType(a, b, c);
+  if (triangleName !== '일반 삼각형') return triangleName;
+  let answer = 'YES';
+  let max;
+  let sum = a + b + c;
 
-    if (a > b) max = a;
-    else max = b;
-    if (c > max) max = c;
+  max = a > b ? a : b;
+  if (c > max) max = c;
 
-    if (sum - max <= max) answer = "NO";
+  if (sum - max <= max) answer = 'NO';
 
-    return answer;
+  return answer;
+}
+
+function triangleType(a, b, c) {
+  let triangleType = '일반 삼각형';
+  if (a === b && b === c) {
+    triangleType = '정삼각형';
+  } else if (a === b || b === c || a === c) {
+    triangleType = '이등변 삼각형';
+  }
+
+  return triangleType;
 }
