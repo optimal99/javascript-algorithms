@@ -22,16 +22,17 @@
  * */
 
 import { areNumbersInRange } from '../util/boolean.js';
+import { pickOddNumbers, sumNumbers } from '../util/array.js';
 
-function solution(...numbers) {
+export function solution16(...numbers) {
   const isInRange = areNumbersInRange(numbers, 1, 100);
 
   if (isInRange) {
     // 홀수 배열 추출
-    const oddNumbers = numbers.filter(number => number % 2 !== 0);
+    const oddNumbers = pickOddNumbers(numbers);
 
     // 홀수들의 합 추출
-    const sumOfOddNumbers = oddNumbers.reduce((acc, cur) => acc + cur, 0);
+    const sumOfOddNumbers = sumNumbers(oddNumbers);
 
     // 홀수들 중 최솟값 추출
     const minOddNumber = Math.min(...oddNumbers);
@@ -39,5 +40,3 @@ function solution(...numbers) {
     return `${sumOfOddNumbers}\n${minOddNumber}`;
   } else return '1부터 100사이의 자연수를 입력해주세요.';
 }
-
-console.log(solution(12, 77, 38, 41, 53, 92, 85)); // 256\n41
