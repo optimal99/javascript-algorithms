@@ -12,7 +12,13 @@
  * 4. 위반 차량 대수를 출력한다.
  * */
 
-function solution(day, cars) {
+import { areNumbersInRange } from '../util/boolean.js';
+
+export function solution17(day, cars) {
+  if (!areNumbersInRange(day, 0, 9)) return '날짜의 일의 자리 숫자를 입력해주세요.';
+  if (cars.length !== 7) return '7대의 자동차 번호를 입력해주세요.';
+  if (!areNumbersInRange(cars, 10, 99)) return '자동차 번호의 끝 두 자리 숫자를 입력해주세요.';
+
   let count = 0;
 
   for (let car of cars) {
@@ -23,6 +29,3 @@ function solution(day, cars) {
 
   return count;
 }
-
-console.log(solution(3, [25, 23, 11, 47, 53, 17, 33])); // 3
-console.log(solution(0, [12, 20, 54, 30, 87, 91, 30])); // 3
