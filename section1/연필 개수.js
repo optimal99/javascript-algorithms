@@ -18,10 +18,8 @@
 
 import { areNumbersInRange } from '../util/boolean.js';
 
-function solution(...n) {
+export function solution13(...n) {
+  if (n.length === 0) return false;
   const isInRange = areNumbersInRange(n, 1, 1000);
   return isInRange ? Math.ceil(n / 12) : false;
 }
-
-console.log(solution(25)); // 3
-console.log(solution(178)); // 15
