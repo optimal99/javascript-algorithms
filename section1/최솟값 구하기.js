@@ -9,7 +9,9 @@
  * 3. 가장 작은 수를 출력하기
  * */
 
-function solution(...numbers) {
+export function solution15(...numbers) {
+  if (numbers.length === 0) return NaN;
+
   let minNumber = numbers[0];
 
   for (let i = 1; i < numbers.length; i++) {
@@ -20,5 +22,3 @@ function solution(...numbers) {
 
   return minNumber;
 }
-
-console.log(solution(5, 3, 7, 11, 2, 15, 17)); // 2
