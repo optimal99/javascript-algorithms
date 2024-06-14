@@ -7,10 +7,10 @@
  */
 export function areNumbersInRange(numbers, min, max) {
   if (Array.isArray(numbers)) {
-    return numbers.every(number => {
-      return !(!Number.isInteger(number) || number < min || number > max);
+    return !numbers.some(number => {
+      return !Number.isInteger(number) || number < min || number > max;
     });
   } else {
-    return !(!Number.isInteger(numbers) || numbers < min || numbers > max);
+    return Number.isInteger(numbers) && numbers >= min && numbers <= max;
   }
 }
