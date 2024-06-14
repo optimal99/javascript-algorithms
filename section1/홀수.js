@@ -22,17 +22,16 @@
  * */
 
 import { areNumbersInRange } from '../util/boolean.js';
-import { pickOddNumbers, sumNumbers } from '../util/array.js';
 
 export function solution16(...numbers) {
   const isInRange = areNumbersInRange(numbers, 1, 100);
 
   if (isInRange) {
     // 홀수 배열 추출
-    const oddNumbers = pickOddNumbers(numbers);
+    const oddNumbers = numbers.filter(number => number % 2 !== 0);
 
     // 홀수들의 합 추출
-    const sumOfOddNumbers = sumNumbers(oddNumbers);
+    const sumOfOddNumbers = oddNumbers.reduce((acc, cur) => acc + cur, 0);
 
     // 홀수들 중 최솟값 추출
     const minOddNumber = Math.min(...oddNumbers);
