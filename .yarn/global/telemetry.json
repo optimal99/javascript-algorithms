@@ -1,0 +1,33 @@
+{
+  "lastUpdate": 1719422873257,
+  "lastTips": 1718496000000,
+  "blocks": {
+    "*": {
+      "hits": {
+        "installCount": {
+          "pnp": 1
+        }
+      },
+      "values": {
+        "version": [
+          "4.3.0"
+        ],
+        "commandName": [
+          "install",
+          "<none>"
+        ],
+        "workspaceCount": [
+          "1"
+        ],
+        "dependencyCount": [
+          "6"
+        ]
+      },
+      "enumerators": {
+        "projectCount": [
+          "16a83a0e5d4676ec60a1a8f0f1237098cdfeb8ee96a5630cbe6bf302a7d694e3c1cd18f243b896c7bcbebcd71ef75d18431ee568b0f6e1364fbb7c512f7e78b5"
+        ]
+      }
+    }
+  }
+}
